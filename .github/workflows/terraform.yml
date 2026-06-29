@@ -24,7 +24,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::<ACCOUNT_ID>:role/GitHubDeployRole
+          role-to-assume: arn:aws:iam::975050216413:role/GitHubDeployRole
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Create deployment archive
@@ -33,7 +33,7 @@ jobs:
 
       - name: Upload archive to S3
         run: |
-          aws s3 cp app.tar.gz s3://<YOUR_BUCKET>/deployments/app.tar.gz
+          aws s3 cp app.tar.gz s3://ls-tf-state-lavi/deployments/app.tar.gz
 
       - name: Deploy on EC2
         run: |

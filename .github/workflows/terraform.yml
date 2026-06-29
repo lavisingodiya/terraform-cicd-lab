@@ -24,7 +24,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::975050216413:role/GitHubDeployRole
+          role-to-assume: arn:aws:iam::975050216413:role/apple-oidc
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Create deployment archive
